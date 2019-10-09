@@ -1,4 +1,7 @@
 package com.elyeproj.autovalue;
 
-public class MyKey {
+@interface MyKey {
+    String name();
+    Class<?> implementingClass();
+    int[] thresholds();
 }

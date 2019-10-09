@@ -2,6 +2,7 @@ package com.elyeproj.autovalue;
 
 import org.junit.Test;
 
+import static com.elyeproj.autovalue.MyComponent.createMyKey;
 import static org.junit.Assert.*;
 
 /**
@@ -22,5 +23,12 @@ public class ExampleUnitTest {
         assertFalse(Animal.create("dog", 2).equals(dog));
 
         assertEquals("Animal{name=dog, numberOfLegs=4}", dog.toString());
+    }
+
+    @Test
+    public void testAutoAnnotation() {
+        MyKey key = createMyKey("abc", Animal.class, new int[] {1, 5, 10});
+
+        System.out.println(key);
     }
 }
